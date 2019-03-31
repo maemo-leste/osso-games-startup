@@ -26,7 +26,7 @@
 #include <glib/gstdio.h>
 #include <hildon/hildon-banner.h>
 #include <hildon/hildon-helper.h>
-#include <libgnomevfs/gnome-vfs.h>
+#include <gio/gio.h>
 #include <stdlib.h>
 #include "callbacks.h"
 #include "state_save.h"
@@ -501,7 +501,7 @@ set_save_menu_state(gboolean state)
     AppUIData *ui = app_data->app_ui_data;
     if (state == TRUE)
     {                           /* Check, if the file is read-only, or not */
-        gchar *file = NULL;
+/*        gchar *file = NULL;
         settings_get_string(SETTINGS_CHESS_SAVE_FILE);
         gchar *directory_uri = NULL, *last_slash = NULL;
         gboolean dir_ok = TRUE;
@@ -550,7 +550,7 @@ set_save_menu_state(gboolean state)
                 gnome_vfs_file_info_unref(dir_info);
                 gnome_vfs_file_info_unref(file_info);
             }
-        }
+        }*/
     } else {
         gtk_widget_hide(ui->game_save_menu);
     }
