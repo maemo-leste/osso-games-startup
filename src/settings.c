@@ -472,9 +472,6 @@ init_settings()
 {
     g_assert(app_data);
 
-    /* Init type system */
-    g_type_init();
-
     /* Init the client */
     g_debug("Initializing GConf\n");
     app_data->gc_client = gconf_client_get_default();

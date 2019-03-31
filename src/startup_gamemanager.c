@@ -22,7 +22,7 @@
     Boston, MA 02111-1307, USA.
 */
 
-#include <libgnomevfs/gnome-vfs.h>
+#include <gio/gio.h>
 #include <glib/gstdio.h>
 #include "startup_gamemanager.h"
 
@@ -205,11 +205,13 @@ void game_mime_open(gchar *filename)
      * return */
     if (!app_data->plugin->menu_open_save)
     {
-        gchar *filen = gnome_vfs_format_uri_for_display(filename);
+        GFile* file = g_file_new_for_uri (filename);
+        gchar *filen = g_file_get_parse_name (file);
         gchar *basename = g_path_get_basename(filen);
 	gchar *temp = g_strrstr(basename, ".");
         if (temp) *temp = '\0';
         gchar *msg = g_strdup_printf(_("game_ni_unsupported_file%s"), basename);
+        g_free(file);
 	g_free(filen);
 	g_free(basename);
 

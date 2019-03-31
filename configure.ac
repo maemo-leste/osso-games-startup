@@ -12,9 +12,9 @@ AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_LIBTOOL
 
-CFLAGS="$CFLAGS -Werror -Wall -Wmissing-prototypes -Wmissing-declarations"
+CFLAGS="$CFLAGS -Werror -Wall -Wmissing-prototypes -Wmissing-declarations -fgnu89-inline"
 
-PKG_CHECK_MODULES(GDEPS, gtk+-2.0 >= 2.2 glib-2.0 >= 2.2 gconf-2.0 >= 2.2 gnome-vfs-2.0 >= 2.2 hildon-fm-2 >= 0.8.1)
+PKG_CHECK_MODULES(GDEPS, gtk+-2.0 >= 2.2 gmodule-2.0 >= 2.2 glib-2.0 >= 2.2 gconf-2.0 >= 2.2 hildon-fm-2 >= 0.8.1)
 AC_SUBST(GDEPS_CFLAGS)
 AC_SUBST(GDEPS_LIBS)
 

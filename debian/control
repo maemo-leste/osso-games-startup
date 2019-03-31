@@ -2,7 +2,7 @@ Source: osso-games-startup
 Section: games
 Priority: optional
 Maintainer: Sandeep Sundaram <sandeep.sundaram@nokia.com>
-Build-Depends: intltool, debhelper (>= 4.0.0),  libgtk2.0-dev, libosso-gnomevfs2-dev, libglib2.0-dev, libdbus-glib-1-dev, libosso-dev, libgconf2-dev, libhildonfm2-dev (>=2.16.2), libhildonmime-dev, maemo-launcher-dev
+Build-Depends: intltool, debhelper (>= 4.0.0),  libgtk2.0-dev, libglib2.0-dev, libdbus-glib-1-dev, libosso-dev, libgconf2-dev, libhildonfm2-dev (>=2.16.2), libhildonmime-dev, maemo-launcher-dev
 Standards-Version: 3.6.0
 
 Package: osso-games-startup
@@ -19,11 +19,3 @@ Section: devel
 Depends: libhildon1-dev
 Description: games-screen development packages
  Development files for games specific plugin
-
-Package: osso-games-startup-dbg
-Architecture: any
-Section: devel
-Depends: osso-games-startup (= ${Source-Version})
-Description: Games startup screen debug package
- Debug symbols for OSSO games startup screen.
-
