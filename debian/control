@@ -1,0 +1,29 @@
+Source: osso-games-startup
+Section: games
+Priority: optional
+Maintainer: Sandeep Sundaram <sandeep.sundaram@nokia.com>
+Build-Depends: intltool, debhelper (>= 4.0.0),  libgtk2.0-dev, libosso-gnomevfs2-dev, libglib2.0-dev, libdbus-glib-1-dev, libosso-dev, libgconf2-dev, libhildonfm2-dev (>=2.16.2), libhildonmime-dev, maemo-launcher-dev
+Standards-Version: 3.6.0
+
+Package: osso-games-startup
+Architecture: any
+Depends: osso-games-l10n-mr | osso-games-l10n-mr0, ${shlibs:Depends}, ${misc:Depends}, ${launcher:Depends}, hildon-common-strings-l10n-mr | hildon-common-strings-l10n-mr0
+Conflicts: osso-chess-ui (<< 1.0.40-0)
+Description: Startup screen for OSSO Games
+ The Startup screen to start and handle OSSO Games. Game screen is started
+ using DBUS and OSSO library. Supports Chess, Mahjong and LMarbles.
+
+Package: osso-games-startup-dev
+Architecture: any
+Section: devel
+Depends: libhildon1-dev
+Description: games-screen development packages
+ Development files for games specific plugin
+
+Package: osso-games-startup-dbg
+Architecture: any
+Section: devel
+Depends: osso-games-startup (= ${Source-Version})
+Description: Games startup screen debug package
+ Debug symbols for OSSO games startup screen.
+
