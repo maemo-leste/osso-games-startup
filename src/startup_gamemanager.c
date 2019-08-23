@@ -211,7 +211,7 @@ void game_mime_open(gchar *filename)
 	gchar *temp = g_strrstr(basename, ".");
         if (temp) *temp = '\0';
         gchar *msg = g_strdup_printf(_("game_ni_unsupported_file%s"), basename);
-        g_free(file);
+        g_object_unref(file);
 	g_free(filen);
 	g_free(basename);
 
