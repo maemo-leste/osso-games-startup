@@ -1,3 +1,9 @@
+osso-games-startup (1.7.51) unstable; urgency=low
+
+  * Fix some compiler errors
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Tue, 03 Dec 2024 15:46:23 +0100
+
 osso-games-startup (1.7.50) unstable; urgency=low
 
   * Initial Maemo Leste port
