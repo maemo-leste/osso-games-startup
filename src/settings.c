@@ -248,7 +248,10 @@ startup_config_parse_file(StartupConfig * sc)
         ++current_line;
 #endif
 
-        fgets(line, 256, file);
+        if (!fgets(line, 256, file)) {
+		fclose(file);
+		return FALSE;
+        }
         g_strchug(line);
         if (line[0] == '\0' || line[0] == '#')
         {

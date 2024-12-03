@@ -679,7 +679,11 @@ check_and_kill_game(gpointer data)
                 gchar *killcmd;
                 g_debug("%s still running, killing it", cmd);
                 killcmd = g_strdup_printf("/usr/bin/killall %s", cmd);
-                system(killcmd);
+		/* We don't care about whether system works or not since we
+		 * don't handle it differently, but gcc complains, so check the
+		 * result and do nothing with it
+		 */
+                if (system(killcmd)) { }
                 g_free(killcmd);
         }
 
