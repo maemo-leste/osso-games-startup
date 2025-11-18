@@ -3,21 +3,20 @@
 	dh $@
 
 ifeq (,$(findstring nolauncher,$(DEB_BUILD_OPTIONS)))
-    OPTS += "--enable-maemo-launcher=yes"
-    USE_MAEMO_LAUNCHER = true
+    OPTS += --enable-maemo-launcher
+    LAUNCHER = yes
 endif
 
 ifeq "$(strip $(LAUNCHER))" "yes"
 	LAUNCHER_DEPENDS = -Vlauncher:Depends="maemo-launcher"
-	LAUNCHER_CFLAGS = $(shell pkg-config --cflags maemo-launcher-app)
-	LAUNCHER_LDFLAGS = $(shell pkg-config --libs maemo-launcher-app) -export-dynamic
 endif
 
-override_dh_auto_install:
-	dh_auto_install
-	if test "x$(USE_MAEMO_LAUNCHER)" = "xtrue"; then \
-		dh_maemolauncher ; \
-	fi
+override_dh_install:
+	dh_install
+	dh_maemolauncher -p osso-games-startup usr/bin/osso_games_startup
+
+override_dh_gencontrol:
+	dh_gencontrol -- $(LAUNCHER_DEPENDS)
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(OPTS)

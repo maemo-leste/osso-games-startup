@@ -22,7 +22,7 @@ osso_games_startup_SOURCES = \
 	ui/interface.h ui/interface.c \
 	ui/callbacks.h ui/callbacks.c
 
-osso_games_startup_LDFLAGS = $(MAEMO_LAUNCHER_LDFLAGS)
+osso_games_startup_LDFLAGS = $(MAEMO_LAUNCHER_LIBS)
 osso_games_startup_LDADD = $(HILDON_LIBS) $(GDEPS_LIBS)
 
 osso_games_startup_includedir = $(includedir)
