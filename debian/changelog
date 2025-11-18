@@ -1,3 +1,9 @@
+osso-games-startup (1.7.52) unstable; urgency=low
+
+  * Ensure maemo-launcher is used
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Tue, 18 Nov 2025 16:47:08 +0100
+
 osso-games-startup (1.7.51) unstable; urgency=low
 
   * Fix some compiler errors
