@@ -1,3 +1,9 @@
+osso-games-startup (1.7.53) unstable; urgency=low
+
+  * Fix reading config files
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Wed, 19 Nov 2025 14:06:26 +0100
+
 osso-games-startup (1.7.52) unstable; urgency=low
 
   * Ensure maemo-launcher is used
